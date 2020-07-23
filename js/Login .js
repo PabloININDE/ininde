@@ -10,53 +10,38 @@ for (var i = 0; i < inputs.length; i++) {
   });
 }
 
-function sectorChange(){
-  console.log(sector.value)
-  if(sector.value>=1) {
-    sector.nextElementSibling.classList.add('fijar');
-  } else {
-    sector.nextElementSibling.classList.remove('fijar');
-  }
-}
-
 /////
 
-const nombre = document.getElementById("nombre");
-const correo = document.getElementById("correo");
-const telefono = document.getElementById("telefono");
-const sector = document.getElementById("sector");
-const form = document.getElementById("formulario");
+const correo = document.getElementById("correo").value;
+const password = document.getElementById("password").value;
 const error = document.getElementById("error");
 var mensajeserror = [];
 
-  form.addEventListener("submit",function(evt){
+  formulario.addEventListener("submit",function(evt){
 
   mensajeserror = [];
 
-  if(nombre.value == null || nombre.value == ""){
-    mensajeserror.push("Ingresa tu nombre <br>");
-  }
-  
   if(correo.value == null || correo.value == ""){
     mensajeserror.push("Ingresa tu correo <br>");
+    console.log("prueba1");
   }
   
-  if(telefono.value.length < 10 || telefono.value == "" ){
-    mensajeserror.push("Ingresa # de telefono valido <br>");
+  if(password.value.length < 6 || password.value == "" ){
+    mensajeserror.push("Ingresa contraseña valida <br>");
   }
 
-  if(sector.value < 1 || sector.value == ""){
-    mensajeserror.push("cual es tu sector de interes ? <br>");
-  }
 
   error.innerHTML = mensajeserror.join(", ")
 
   evt.preventDefault();
 
-  executeDB();
+  
 
     })
 
+
+
+/*
 
   ////// FIREBASE ////
 
@@ -100,5 +85,5 @@ var mensajeserror = [];
 
      }
 
-  
+*/
 

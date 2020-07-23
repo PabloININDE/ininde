@@ -5,32 +5,53 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CONTACTO</title>
     <link rel="stylesheet" href="css/estilos_form.css">
+   
 </head>
 
 <body>
 
-    <form action="" class="formulario">
+    <form action="" class="formulario" id= "formulario">
 
-        <h1 class="formulario_titulo">Contactenos</h1>
+        <h1 class="formulario_titulo">Suscribete</h1>
 
-        <input type="text" class="formulario_input">
-        <label for="" class="formulario_label">Nombres</label>
+        <input type="text" name="nombre"  class="formulario_input" id="nombre" >
+        <label for="" class="formulario_label">Nombre</label>
 
-        <input type="email" class="formulario_input">
+        <input type="email" name="correo" class="formulario_input" id="correo" >
         <label for="" class="formulario_label">Correo</label>
 
-        <input type="number" class="formulario_input">
+        <input type="number" name="telefono" class="formulario_input" id="telefono" >
         <label for="" class="formulario_label">Telefono</label>
 
-        <input type="text" class="formulario_input">
-        <label for="" class="formulario_label">Mensaje</label>
+        <select name="sector" class="formulario_input" id="sector" onchange="sectorChange()" >
+            <option value="0" ></option>
+            <option value="1">Industrial</option>
+            <option value="2">Agricola</option>
+            <option value="3">Oil&Gas</option>
+            <option value="4">Manufactura</option>
+        </select>
+        <label for="" class="formulario_label" id="sector">Sector de interes</label>
 
-        <input type="submit" class="formulario_submit">
+        <input type="submit" class='formulario_submit'>
+
+        <div id="error" class="warnings" id="warnings" >
+     
+        
+        </div>
 
 
     </form>
-    
+
+    <!-- <script src="js/dom.js"></script> -->
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/6.2.0/firebase-database.js"></script>
     <script src="js/form.js"></script>
+
 </body>
 
+
 </html>
+
+
+
+
